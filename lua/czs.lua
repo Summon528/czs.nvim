@@ -69,7 +69,7 @@ function M.setup()
 	set_map("n")
 	set_map("N")
 	-- Recaculate search results when entering a buffer:
-	vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+	vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter", "WinEnter" }, {
 		callback = function()
 			update_searchcount()
 		end,
