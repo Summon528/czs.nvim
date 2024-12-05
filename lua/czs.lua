@@ -58,7 +58,7 @@ local function set_map(move)
 	vim.keymap.set("n", string.format("<Plug>(czs-move-%s)", move), function()
 		hidden = false
 		-- Don't move if we have no search results:
-		if searchcount.total == 0 then
+		if searchcount.incomplete == 0 and searchcount.total == 0 then
 			return
 		end
 		pcall(vim.cmd, 'exec "normal! ' .. (vim.v.count == 0 and "" or vim.v.count) .. move .. '"')
