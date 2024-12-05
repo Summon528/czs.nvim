@@ -9,7 +9,7 @@ local searchcount = nil
 
 local function update_searchcount()
 	local search_ok
-	search_ok, searchcount = pcall(vim.fn.searchcount, { recalculate = 1, timeout = -1 })
+	search_ok, searchcount = pcall(vim.fn.searchcount, { recalculate = 1 })
 	if not search_ok then
 		searchcount = {}
 	end
